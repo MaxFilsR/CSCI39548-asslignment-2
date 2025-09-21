@@ -42,3 +42,13 @@ function addCol() {
 
   console.log(table.rows);
 }
+
+function removeRow() {
+  const table = document.getElementById("myTable");
+  if (table.rows.length === 0) {
+    alert("No rows to remove");
+  } else {
+    const lastRow = table.lastChild;
+    table.removeChild(lastRow);
+  }
+}
