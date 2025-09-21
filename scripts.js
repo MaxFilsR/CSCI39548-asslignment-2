@@ -20,3 +20,25 @@ function addRow() {
     table.append(newRow);
   }
 }
+
+function addCol() {
+  const table = document.getElementById("myTable");
+  if (table.rows.length === 0) {
+    for (var i = 0; i < 3; i++) {
+      const newRow = document.createElement("tr");
+      const newCel = document.createElement("td");
+      newCel.className = "tableCell";
+
+      newRow.append(newCel);
+      table.append(newRow);
+    }
+  } else {
+    for (var i = 0; i < table.rows.length; i++) {
+      const newCel = document.createElement("td");
+      newCel.className = "tableCell";
+      table.rows[i].append(newCel);
+    }
+  }
+
+  console.log(table.rows);
+}
