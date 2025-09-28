@@ -1,3 +1,6 @@
+const colorPicker = document.getElementById('colorPicker')
+let selectedCell = null;
+
 function addRow() {
   const table = document.getElementById("myTable");
   if (table.rows.length === 0) {
@@ -5,6 +8,10 @@ function addRow() {
     for (var i = 0; i < 3; i++) {
       const cell = document.createElement("td");
       cell.className = "tableCell";
+      cell.addEventListener("click", () => {
+        selectedCell = cell
+        colorPicker.click();
+      })
       row.append(cell);
     }
 
@@ -15,6 +22,10 @@ function addRow() {
     for (var i = 0; i < table.rows[0].cells.length; i++) {
       const newCel = document.createElement("td");
       newCel.className = "tableCell";
+      newCel.addEventListener("click", () => {
+        selectedCell = newCel; 
+        colorPicker.click();
+      })
       newRow.append(newCel);
     }
     table.append(newRow);
@@ -28,7 +39,10 @@ function addCol() {
       const newRow = document.createElement("tr");
       const newCel = document.createElement("td");
       newCel.className = "tableCell";
-
+      newCel.addEventListener("click", () => {
+        selectedCell = newCel; 
+        colorPicker.click();
+      })
       newRow.append(newCel);
       table.append(newRow);
     }
@@ -36,6 +50,10 @@ function addCol() {
     for (var i = 0; i < table.rows.length; i++) {
       const newCel = document.createElement("td");
       newCel.className = "tableCell";
+      newCel.addEventListener("click", () => {
+        selectedCell = newCel; 
+        colorPicker.click();
+      })
       table.rows[i].append(newCel);
     }
   }
@@ -49,6 +67,7 @@ function removeRow() {
     alert("No rows to remove");
   } else {
     const lastRow = table.lastChild;
+    selectedCell = null; 
     table.removeChild(lastRow);
   }
 }
@@ -67,6 +86,14 @@ function removeCol() {
   }
 
   for(var i = 0; i < table.rows.length; i++) {
+    selectedCell = null; 
     table.rows[i].deleteCell(-1)
   }
 }
+
+function addColortoSingleCell() {
+  if (selectedCell) {
+    selectedCell.style.backgroundColor = event.target.value;
+  }
+}
+
