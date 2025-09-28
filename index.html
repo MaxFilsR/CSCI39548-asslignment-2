@@ -10,9 +10,14 @@
     <main>
       <h1>Use the Controls below to make your grid.</h1>
       <div class="controls">
-        <button type="button" onclick="addRow()">Add Row</button>
-        <button type="button" onclick="addCol()">Add Col</button>
-        <button type="button" onclick="removeRow()">Remove Row</button>
+        <div class="add">
+          <button type="button" onclick="addRow()">Add Row</button>
+          <button type="button" onclick="addCol()">Add Column</button>
+        </div>
+        <div class="remove">
+          <button type="button" onclick="removeRow()">Remove Row</button>
+          <button type="button" onclick="removeCol()">Remove Column</button>
+        </div>
       </div>
       <table id="myTable"></table>
     </main>
