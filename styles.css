@@ -2,3 +2,13 @@
   border: 1px solid red;
   padding: 50px;
 }
+
+.controls {
+  display: flex;
+  gap: 20px;
+}
+
+.add, .remove {
+  display:flex;
+  gap: 1px; 
+}
