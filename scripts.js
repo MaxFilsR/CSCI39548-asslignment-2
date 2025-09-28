@@ -52,3 +52,21 @@ function removeRow() {
     table.removeChild(lastRow);
   }
 }
+
+
+function removeCol() {
+  const table = document.getElementById("myTable");
+  if (table.rows.length == 0) {
+    alert("No rows to remove column from")
+    return; 
+  }
+
+  if (table.rows[0].cells.length  === 0) {
+    alert("No columns left to remove")
+    return;
+  }
+
+  for(var i = 0; i < table.rows.length; i++) {
+    table.rows[i].deleteCell(-1)
+  }
+}
