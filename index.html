@@ -18,7 +18,24 @@
           <button type="button" onclick="removeRow()">Remove Row</button>
           <button type="button" onclick="removeCol()">Remove Column</button>
         </div>
-        <input type="color" onclick="addColortoSingleCell()" id="colorPicker" style="display: none;">
+        <div class="color-controls">
+          <label for="colorDropdown">Select Color: </label>
+          <select id="colorDropdown">
+              <option value="">Choose a color</option>
+              <option value="#ff0000">Red</option>
+              <option value="#00ff00">Green</option>
+              <option value="#0000ff">Blue</option>
+              <option value="#ffff00">Yellow</option>
+              <option value="#ff00ff">Magenta</option>
+              <option value="#00ffff">Cyan</option>
+              <option value="#ffa500">Orange</option>
+              <option value="#800080">Purple</option>
+              <option value="#ffc0cb">Pink</option>
+              <option value="#ffffff">White</option>
+              <option value="#000000">Black</option>
+              <option value="#808080">Gray</option>
+          </select>
+        </div>
       </div>
       <table id="myTable"></table>
 

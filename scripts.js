@@ -1,4 +1,4 @@
-const colorPicker = document.getElementById('colorPicker')
+const colorDropdown = document.getElementById("colorDropdown");
 let selectedCell = null;
 
 function addRow() {
@@ -10,7 +10,7 @@ function addRow() {
       cell.className = "tableCell";
       cell.addEventListener("click", () => {
         selectedCell = cell
-        colorPicker.click();
+        applySelectedColor();
       })
       row.append(cell);
     }
@@ -24,7 +24,7 @@ function addRow() {
       newCel.className = "tableCell";
       newCel.addEventListener("click", () => {
         selectedCell = newCel; 
-        colorPicker.click();
+        applySelectedColor();
       })
       newRow.append(newCel);
     }
@@ -41,7 +41,7 @@ function addCol() {
       newCel.className = "tableCell";
       newCel.addEventListener("click", () => {
         selectedCell = newCel; 
-        colorPicker.click();
+        applySelectedColor()
       })
       newRow.append(newCel);
       table.append(newRow);
@@ -52,7 +52,7 @@ function addCol() {
       newCel.className = "tableCell";
       newCel.addEventListener("click", () => {
         selectedCell = newCel; 
-        colorPicker.click();
+        applySelectedColor()
       })
       table.rows[i].append(newCel);
     }
@@ -91,9 +91,17 @@ function removeCol() {
   }
 }
 
-function addColortoSingleCell() {
-  if (selectedCell) {
-    selectedCell.style.backgroundColor = event.target.value;
+function applySelectedColor() {
+  if(selectedCell && colorDropdown.value) {
+    selectedCell.style.backgroundColor = colorDropdown.value;
+  }
+  else if (selectedCell && !colorDropdown.value) {
+    alert("Please select a color from the dropdown");
   }
 }
 
+colorDropdown.addEventListener('change', () => {
+  if (selectedCell && colorDropdown.value) {
+    selectedCell.style.backgroundColor = colorDropdown.value;
+  }
+})
