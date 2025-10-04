@@ -105,3 +105,40 @@ colorDropdown.addEventListener('change', () => {
     selectedCell.style.backgroundColor = colorDropdown.value;
   }
 })
+
+function colorUncolored() {
+  const table = document.getElementById("myTable");
+  const color = colorDropdown.value;
+  if (!color) return;
+
+  for (var i = 0; i < table.rows.length; i++) {
+    for (var j = 0; j < table.rows[i].cells.length; j++) {
+      const cell = table.rows[i].cells[j];
+      if (!cell.style.backgroundColor || cell.style.backgroundColor === "" || cell.style.backgroundColor === "white") {
+        cell.style.backgroundColor = color;
+      }
+    }
+  }
+}
+function colorAll(){
+  const table = document.getElementById("myTable");
+  const color = colorDropdown.value;
+  if (!color) return;
+
+  for (var i = 0; i < table.rows.length; i++) {
+    for (var j = 0; j < table.rows[i].cells.length; j++) {
+      const cell = table.rows[i].cells[j];
+      cell.style.backgroundColor = color;
+    }
+  }
+}
+function clearAll() {
+  const table = document.getElementById("myTable");
+
+  for (var i = 0; i < table.rows.length; i++) {
+    for (var j = 0; j < table.rows[i].cells.length; j++) {
+      const cell = table.rows[i].cells[j];
+      cell.style.backgroundColor = "";
+    }
+  }
+}
