@@ -11,4 +11,4 @@ CSS, JavaScript, DOM manipulation, and handling user events.
 - **An Van**  
   GitHub: [realpyop An Van]([https://github.com/realpyop)  
 ## Github Pages
-- [Grid Maker]( https://maxfilsr.github.io/CSCI39548-asslignment-2/)
+- [Bank Of React]( https://maxfilsr.github.io/bank-of-react/)
